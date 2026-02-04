@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <style>
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; background: #222; }
+        #container { text-align: center; }
+        canvas { background: #fff; border: 2px solid #333; display: block; margin: 0 auto; }
+        h1 { color: #fff; }
+        #controls { margin: 10px 0; }
+        .speed-btn { margin: 0 3px; padding: 5px 10px; font-size: 16px; }
+        #restartBtn { margin-top: 10px; padding: 6px 16px; font-size: 16px; display: none; }
+        #ranking { color: #fff; margin-top: 15px; }
+        #playtime { color: #fff; font-size: 18px; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Snake Game</h1>
+        <div id="playtime">플레이타임: 0초</div>
+        <div id="controls">
+            <span style="color:white;">속도: </span>
+            <button class="speed-btn" onclick="setSpeed(1)">1</button>
+            <button class="speed-btn" onclick="setSpeed(2)">2</button>
+            <button class="speed-btn" onclick="setSpeed(3)">3</button>
+            <button class="speed-btn" onclick="setSpeed(4)">4</button>
+            <button class="speed-btn" onclick="setSpeed(5)">5</button>
+        </div>
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <button id="restartBtn" onclick="restartGame()">재시작</button>
+        <div id="ranking">
+            <h3>점수 랭킹 Top 5</h3>
+            <ol id="rankingList"></ol>
+        </div>
+        <p style="color:white;">방향키로 조작하세요</p>
+    </div>
+    <script src="snake.js"></script>
+</body>
+</html>
